@@ -1,14 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using WMS.Contracts.IRepository;
-using WMS.Repositories;
+﻿using WMS.Contracts;
 using WMS.DataLayer;
-using WMS.Models.Models;
+using WMS.Models;
 
-namespace WMS.Repositories.Repository
+namespace WMS.Repositories
 {
     public class UserRepository : RepositoryBase<User>, IUserRepository
     {
-        public UserRepository(WMSDbContext context) : base(context) 
+        public UserRepository(WMSContext context) : base(context) 
         {
 
         }

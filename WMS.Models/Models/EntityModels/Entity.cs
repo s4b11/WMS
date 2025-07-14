@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WMS.Core.Models
+namespace WMS.Models
 {
     public abstract class Entity : EntityBase
     {

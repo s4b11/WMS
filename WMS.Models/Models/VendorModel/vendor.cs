@@ -1,6 +1,4 @@
-﻿using WMS.Core.Models;
-
-namespace WMS.Models.Models.VendorModel
+﻿namespace WMS.Models
 {
     public class Vendor : EntityGuid
     {

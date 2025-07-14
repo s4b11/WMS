@@ -1,6 +1,4 @@
-﻿using WMS.Core.Models;
-
-namespace WMS.Models.Models.CarrierModel
+﻿namespace WMS.Models
 {
     public class Carrier : EntityGuid
     {        

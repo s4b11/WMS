@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WMS.Core.Models;
-using WMS.Models.Models.CarrierModel;
+using WMS.Models;
 using System;
 
 namespace WMS.DataLayer.Configurations

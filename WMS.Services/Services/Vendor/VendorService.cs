@@ -3,12 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WMS.Contracts;
-using WMS.Contracts.ILogger;
-using WMS.Contracts.IVendor;
 using WMS.Dtos;
 using WMS.LoggerService;
 using WMS.Models;
-using WMS.Models.Models.VendorModel;
 using WMS.Services.IServices;
 using WMS.Utilities;
 

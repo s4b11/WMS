@@ -1,7 +1,6 @@
-﻿using WMS.Contracts;
-using WMS.Models.Models.UomModel;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.IUom
+namespace WMS.Contracts
 {
     public interface IUomRepository : IRepositoryBase<Uom>
     {

@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Data;
-using WMS.Models.Models;
+using WMS.Models;
 
 namespace WMS.DataLayer.Configurations
 {

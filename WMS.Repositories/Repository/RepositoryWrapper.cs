@@ -1,12 +1,4 @@
 ﻿using WMS.Contracts;
-using WMS.Contracts.ICarrier;
-using WMS.Contracts.ICompany;
-using WMS.Contracts.ICountry;
-using WMS.Contracts.ICurrency;
-using WMS.Contracts.ICustomer;
-using WMS.Contracts.IUom;
-using WMS.Contracts.IVendor;
-using WMS.Contracts.IZone;
 using WMS.DataLayer;
 
 
@@ -14,7 +6,7 @@ namespace WMS.Repositories
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {
-        private WMSDbContext _repoContext;
+        private WMSContext _repoContext;
         private ICountryRepository _country;
         private ICompanyRepository _company;
         private IVendorRepository _vendor;
@@ -24,7 +16,7 @@ namespace WMS.Repositories
         private IUomRepository _uom;
         private IZoneRepository _zone;
 
-        public RepositoryWrapper(WMSDbContext repositoryContext)
+        public RepositoryWrapper(WMSContext repositoryContext)
         {
             _repoContext = repositoryContext;
         }

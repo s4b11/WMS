@@ -11,9 +11,9 @@ using WMS.DataLayer;
 
 namespace WMS.DataLayer.Migrations
 {
-    [DbContext(typeof(WMSDbContext))]
-    [Migration("20250712053107_SeedUserData")]
-    partial class SeedUserData
+    [DbContext(typeof(WMSContext))]
+    [Migration("20250714073312_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace WMS.DataLayer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("WMS.Models.Models.CarrierModel.Carrier", b =>
+            modelBuilder.Entity("WMS.Models.Carrier", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -167,7 +167,7 @@ namespace WMS.DataLayer.Migrations
                             StateId = 27,
                             TransExistFlag = "N",
                             Type = "Air",
-                            UniqueGuId = new Guid("1c2936ec-c422-403d-92ae-338733e9c55a")
+                            UniqueGuId = new Guid("d6628e5b-4c03-4661-ad4f-6f1c859c3385")
                         },
                         new
                         {
@@ -196,11 +196,11 @@ namespace WMS.DataLayer.Migrations
                             StateId = 33,
                             TransExistFlag = "Y",
                             Type = "Road",
-                            UniqueGuId = new Guid("98b6eca4-412c-403e-b64e-e3a0acbe5880")
+                            UniqueGuId = new Guid("ed4fa30c-b655-4bc8-af6b-e5ad1fb41626")
                         });
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.CompanyModel.Company", b =>
+            modelBuilder.Entity("WMS.Models.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -379,7 +379,7 @@ namespace WMS.DataLayer.Migrations
                             TINNO = "TIN987654",
                             TransExistFlag = "Y",
                             URL = "www.abccorp.com",
-                            UniqueGuId = new Guid("cfbed529-1383-46bc-a32a-c39d81fbf584"),
+                            UniqueGuId = new Guid("9d2d7734-7a70-4064-8f16-0f293ac0516e"),
                             UserID = 1,
                             _3PLFlag = "N"
                         },
@@ -409,13 +409,13 @@ namespace WMS.DataLayer.Migrations
                             StateId = 2,
                             TransExistFlag = "N",
                             URL = "www.xyzlogistics.com",
-                            UniqueGuId = new Guid("971cebb7-b530-468d-b4bf-332c863a877e"),
+                            UniqueGuId = new Guid("bedda5fd-4e52-4962-82e4-41d294570cd6"),
                             UserID = 1,
                             _3PLFlag = "Y"
                         });
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.CountryModel.Country", b =>
+            modelBuilder.Entity("WMS.Models.Country", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -468,7 +468,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("dd6807b3-89a1-4cdb-9b92-be1a7eb5905a")
+                            UniqueGuId = new Guid("e28a9cdd-d1fb-4d38-895b-22d7c7782e5b")
                         },
                         new
                         {
@@ -480,7 +480,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("e625a692-5251-488c-8fa0-844ace163ffa")
+                            UniqueGuId = new Guid("4965f0bf-b878-481a-8b64-323a7292615d")
                         },
                         new
                         {
@@ -492,7 +492,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("9526160c-1aca-4948-b495-894203ed928f")
+                            UniqueGuId = new Guid("e35689a0-36e1-4bac-9975-6ff24476d221")
                         },
                         new
                         {
@@ -504,7 +504,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("e6957ab7-62dc-48c1-aefc-3dc5b49049ce")
+                            UniqueGuId = new Guid("a1741b8b-c283-48f7-ac8b-a8bbab9fc8c8")
                         },
                         new
                         {
@@ -516,7 +516,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("d84675ad-9c7e-4d5b-a75e-12e36925bcfd")
+                            UniqueGuId = new Guid("820ef499-0ee5-4b57-b799-9755e2092866")
                         },
                         new
                         {
@@ -528,7 +528,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("d8a4abcc-888d-4de0-a24f-984bdf15fa28")
+                            UniqueGuId = new Guid("c4ad6c1a-c05b-42a8-9a18-bfd30f992e76")
                         },
                         new
                         {
@@ -540,7 +540,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("da6a6499-0ba1-48c5-87bf-598626a48ec3")
+                            UniqueGuId = new Guid("03afe121-d750-4591-b572-d2d76be52e4a")
                         },
                         new
                         {
@@ -552,7 +552,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("6d151bc7-4bfb-4ce6-a0ca-67422d4f8906")
+                            UniqueGuId = new Guid("b8d80c0d-20fa-4cc2-bbc1-b22e3a7b817e")
                         },
                         new
                         {
@@ -564,7 +564,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("965990d2-c8d0-441f-a402-8acbd1aa713c")
+                            UniqueGuId = new Guid("7ff8e2e5-b35a-47c5-b5f9-baed067770d3")
                         },
                         new
                         {
@@ -576,7 +576,7 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("c268367e-d244-4358-8bc9-feeef0c0559c")
+                            UniqueGuId = new Guid("d6713959-36c0-468f-ba18-de04b14de3f4")
                         },
                         new
                         {
@@ -588,11 +588,11 @@ namespace WMS.DataLayer.Migrations
                             IsDeleted = false,
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UniqueGuId = new Guid("a1e8d371-009d-444a-a9c5-5c0ff59d0393")
+                            UniqueGuId = new Guid("78e0e60e-8a8b-4d91-8403-762abc38cbeb")
                         });
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.CurrencyModel.Currency", b =>
+            modelBuilder.Entity("WMS.Models.Currency", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -649,7 +649,7 @@ namespace WMS.DataLayer.Migrations
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "US Dollar",
-                            UniqueGuId = new Guid("6542999a-83dd-4f8a-a71d-7d136d39d10b")
+                            UniqueGuId = new Guid("8e8d2e69-b564-4548-8bff-09329778aae2")
                         },
                         new
                         {
@@ -662,11 +662,11 @@ namespace WMS.DataLayer.Migrations
                             ModifiedBy = 0,
                             ModifiedDate = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Euro",
-                            UniqueGuId = new Guid("16d4d9fd-9528-4cc4-98a2-2f64c21fbdd1")
+                            UniqueGuId = new Guid("03f1239d-a61d-475a-8c16-0ab3705bb70b")
                         });
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.CustomerModel.Customer", b =>
+            modelBuilder.Entity("WMS.Models.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -823,7 +823,7 @@ namespace WMS.DataLayer.Migrations
                             TINNO = "TIN987654",
                             TransExistFlag = 'N',
                             URL = "https://acmecorp.com",
-                            UniqueGuId = new Guid("f5967d3a-4a7e-4d6d-aba0-2a2e894b4061"),
+                            UniqueGuId = new Guid("c18d1d05-fae4-4b13-a35e-9f839c5dfd9e"),
                             UserID = 1
                         },
                         new
@@ -852,12 +852,12 @@ namespace WMS.DataLayer.Migrations
                             TINNO = "TIN654321",
                             TransExistFlag = 'Y',
                             URL = "https://betaind.com",
-                            UniqueGuId = new Guid("802fb93c-cc76-42ce-86d9-7bacd9ddad59"),
+                            UniqueGuId = new Guid("05445e07-faf6-4235-bd94-2d97fd13fe35"),
                             UserID = 2
                         });
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.ErrorLog", b =>
+            modelBuilder.Entity("WMS.Models.ErrorLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -895,7 +895,9 @@ namespace WMS.DataLayer.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("UniqueGuId")
-                        .HasColumnType("uuid");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("uuid_generate_v4()");
 
                     b.Property<int?>("UserID")
                         .HasColumnType("integer");
@@ -905,7 +907,7 @@ namespace WMS.DataLayer.Migrations
                     b.ToTable("ErrorLog");
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.ExceptionLog", b =>
+            modelBuilder.Entity("WMS.Models.ExceptionLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -957,7 +959,7 @@ namespace WMS.DataLayer.Migrations
                     b.ToTable("ExceptionLog");
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.SeqErrorLog", b =>
+            modelBuilder.Entity("WMS.Models.SeqErrorLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -999,7 +1001,7 @@ namespace WMS.DataLayer.Migrations
                     b.ToTable("SeqErrorLog");
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.UomModel.Uom", b =>
+            modelBuilder.Entity("WMS.Models.Uom", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1060,7 +1062,7 @@ namespace WMS.DataLayer.Migrations
                             Name = "Kilogram",
                             Short = "kg",
                             TransExistFlag = "Y",
-                            UniqueGuId = new Guid("ab454df2-cb1b-4964-a0e8-9180d163daa7")
+                            UniqueGuId = new Guid("9ccdb384-d268-45d5-ae4d-61bb7aa72397")
                         },
                         new
                         {
@@ -1073,11 +1075,11 @@ namespace WMS.DataLayer.Migrations
                             Name = "Liter",
                             Short = "L",
                             TransExistFlag = "Y",
-                            UniqueGuId = new Guid("b2c7fae8-70f4-4ff1-9d22-330dbedb489a")
+                            UniqueGuId = new Guid("e3c16fda-dcae-47e9-8cff-65daa63676e9")
                         });
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.User", b =>
+            modelBuilder.Entity("WMS.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1138,7 +1140,7 @@ namespace WMS.DataLayer.Migrations
                             ModifiedDate = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Utc),
                             PasswordHash = "$2a$12$HLfQhL/tjH2zrY35XCVsmex2Qup7Tr3p5Xu3CyrAVDmRA35RaxOz.",
                             Role = "Admin",
-                            UniqueGuId = new Guid("3447d3d5-ecdc-4223-811a-beb63443da5d"),
+                            UniqueGuId = new Guid("13c99142-af42-4d03-86fc-956f179a6211"),
                             Username = "admin"
                         },
                         new
@@ -1152,12 +1154,12 @@ namespace WMS.DataLayer.Migrations
                             ModifiedDate = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Utc),
                             PasswordHash = "$2a$12$6ngObu3BSe8Zk5/UIM1ckeNQ5wSpc7GzM1hc.1BEOBtKYkX.5.0NC",
                             Role = "User",
-                            UniqueGuId = new Guid("dbd751ba-42c8-416e-91fb-6fe7b7cbffa0"),
+                            UniqueGuId = new Guid("cbd74395-6c94-4c15-923b-60e216c298b5"),
                             Username = "user"
                         });
                 });
 
-            modelBuilder.Entity("WMS.Models.Models.VendorModel.Vendor", b =>
+            modelBuilder.Entity("WMS.Models.Vendor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1317,7 +1319,7 @@ namespace WMS.DataLayer.Migrations
                             TINDate = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Utc),
                             TINNo = "TIN789012",
                             TransExist = 'N',
-                            UniqueGuId = new Guid("c506cd5c-0726-4a20-8dfa-262a27fd41c3"),
+                            UniqueGuId = new Guid("c4947d95-0202-4a59-8b93-22238c4d7f3b"),
                             Url = "https://www.gtc.com",
                             UserID = 1
                         },
@@ -1350,9 +1352,85 @@ namespace WMS.DataLayer.Migrations
                             TINDate = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Utc),
                             TINNo = "TIN210987",
                             TransExist = 'Y',
-                            UniqueGuId = new Guid("0574d9a1-71a1-405b-852e-f859cea839c8"),
+                            UniqueGuId = new Guid("92fb1759-06e6-4164-a79c-14ea3fb121f1"),
                             Url = "https://www.dsl.in",
                             UserID = 2
+                        });
+                });
+
+            modelBuilder.Entity("WMS.Models.Zone", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("ModifiedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Short")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("TransExistFlag")
+                        .IsRequired()
+                        .HasMaxLength(1)
+                        .HasColumnType("character varying(1)");
+
+                    b.Property<Guid>("UniqueGuId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasDefaultValueSql("uuid_generate_v4()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Zone");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = 0,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 0,
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "North Zone",
+                            Short = "NZ",
+                            TransExistFlag = "N",
+                            UniqueGuId = new Guid("f5d50661-7af2-4476-badd-bf3414cc1939")
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = 0,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            ModifiedBy = 0,
+                            ModifiedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "South Zone",
+                            Short = "SZ",
+                            TransExistFlag = "N",
+                            UniqueGuId = new Guid("3d067253-1e54-4581-bcfd-24cad27f0ddd")
                         });
                 });
 #pragma warning restore 612, 618

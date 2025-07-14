@@ -1,23 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using System.Reflection.Emit;
 using WMS.DataLayer.Configuration;
 using WMS.DataLayer.Configurations;
-using WMS.Models.Models;
-using WMS.Models.Models.CarrierModel;
-using WMS.Models.Models.CompanyModel;
-using WMS.Models.Models.CountryModel;
-using WMS.Models.Models.CurrencyModel;
-using WMS.Models.Models.CustomerModel;
-using WMS.Models.Models.UomModel;
-using WMS.Models.Models.VendorModel;
-using WMS.Models.Models.ZoneModel;
+using WMS.Models;
 
 namespace WMS.DataLayer
 {
-    public class WMSDbContext : DbContext
+    public class WMSContext : DbContext
     {
-        public WMSDbContext(DbContextOptions<WMSDbContext> options) : base(options)
+        public WMSContext(DbContextOptions<WMSContext> options) : base(options)
         {
         }
 

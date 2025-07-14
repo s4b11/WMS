@@ -1,12 +1,12 @@
-﻿using WMS.Contracts.IZone;
+﻿using WMS.Contracts;
 using WMS.DataLayer;
-using WMS.Models.Models.ZoneModel;
+using WMS.Models;
 
 namespace WMS.Repositories
 {
     public class ZoneRepository : RepositoryBase<Zone>, IZoneRepository
     {
-        public ZoneRepository(WMSDbContext repositoryContext) : base(repositoryContext)
+        public ZoneRepository(WMSContext repositoryContext) : base(repositoryContext)
         {
         }
     }

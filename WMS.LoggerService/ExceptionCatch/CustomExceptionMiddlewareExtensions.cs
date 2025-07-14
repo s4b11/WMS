@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace WMS.LoggerService.ExceptionCatch
+namespace WMS.LoggerService
 {
     public static class CustomExceptionMiddlewareExtensions
     {

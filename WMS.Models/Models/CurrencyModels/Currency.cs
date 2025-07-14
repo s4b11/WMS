@@ -1,6 +1,4 @@
-﻿using WMS.Core.Models;
-
-namespace WMS.Models.Models.CurrencyModel
+﻿namespace WMS.Models
 {
     public class Currency : EntityGuid
     {

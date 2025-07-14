@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
-using WMS.Models.Models.CountryModel;
-using WMS.Core.Models;
+using WMS.Models;
 
 namespace WMS.DataLayer.Configurations
 {

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using WMS.Contracts;
-using WMS.Core.Models;
 using WMS.DataLayer;
 using WMS.Models;
 
@@ -13,10 +12,10 @@ namespace WMS.Repositories
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : Entity
     {
-        private WMSDbContext RepositoryContext;
+        private WMSContext RepositoryContext;
         private DbSet<T> Entities;
 
-        public RepositoryBase(WMSDbContext repositoryContext)
+        public RepositoryBase(WMSContext repositoryContext)
         {
             RepositoryContext = repositoryContext;
             Entities = repositoryContext.Set<T>();

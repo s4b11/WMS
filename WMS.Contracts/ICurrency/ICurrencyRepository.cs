@@ -1,7 +1,6 @@
-﻿using WMS.Contracts;
-using WMS.Models.Models.CurrencyModel;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.ICurrency
+namespace WMS.Contracts
 {
     public interface ICurrencyRepository : IRepositoryBase<Currency>
     {

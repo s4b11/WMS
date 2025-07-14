@@ -1,7 +1,6 @@
-﻿using WMS.Contracts;
-using WMS.Models.Models.CountryModel;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.ICountry
+namespace WMS.Contracts
 {
     public interface ICountryRepository : IRepositoryBase<Country>
     {

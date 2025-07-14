@@ -12,36 +12,15 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Text;
 using WMS.Api.Validation;
 using WMS.Contracts;
-using WMS.Contracts.ICarrier;
-using WMS.Contracts.ICompany;
-using WMS.Contracts.ICountry;
-using WMS.Contracts.ICurrency;
-using WMS.Contracts.ICustomer;
 using WMS.Contracts.ILog;
-using WMS.Contracts.ILogger;
-using WMS.Contracts.IRepository;
-using WMS.Contracts.IUom;
-using WMS.Contracts.IVendor;
-using WMS.Contracts.IZone;
 using WMS.DataLayer;
 using WMS.Dtos;
-using WMS.Dtos.Validators;
 using WMS.LoggerService;
-using WMS.LoggerService.ExceptionCatch;
-using WMS.Models.Models.CarrierModel;
-using WMS.Models.Models.CompanyModel;
-using WMS.Models.Models.CountryModel;
-using WMS.Models.Models.CurrencyModel;
-using WMS.Models.Models.CustomerModel;
-using WMS.Models.Models.UomModel;
-using WMS.Models.Models.VendorModel;
-using WMS.Models.Models.ZoneModel;
+using WMS.Models;
 using WMS.Repositories;
 using WMS.Repositories.Log;
-using WMS.Repositories.Repository;
 using WMS.Services;
 using WMS.Services.IServices;
-using WMS.Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -72,7 +51,7 @@ builder.Services.AddAuthentication(options =>
 });
 
 var connectionString = configuration["ConnectionStrings:DefaultConnection"];
-builder.Services.AddDbContext<WMSDbContext>(
+builder.Services.AddDbContext<WMSContext>(
     options => options.UseNpgsql(connectionString, b => b.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)),
     ServiceLifetime.Transient
 );
@@ -147,7 +126,7 @@ builder.Services.AddScoped<IZoneService, ZoneService>();
 
 // Add services to the container.
 //builder.Services.AddControllers();
-//builder.Services.AddDbContext<WMSDbContext>(options =>
+//builder.Services.AddDbContext<WMSContext>(options =>
 //    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ILoggerManager, LoggerManager>();
 builder.Services.AddScoped<ILogRepository, LogRepository>();
@@ -242,7 +221,7 @@ app.UseMiddleware<CorsMiddleware>();
 
 static async Task EnsureDbAsync(IServiceProvider services)
 {
-    using var db = services.CreateScope().ServiceProvider.GetRequiredService<WMSDbContext>();
+    using var db = services.CreateScope().ServiceProvider.GetRequiredService<WMSContext>();
     await db.Database.MigrateAsync();
 }
 

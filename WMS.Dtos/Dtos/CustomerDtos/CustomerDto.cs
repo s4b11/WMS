@@ -1,7 +1,4 @@
-﻿using System;
-using WMS.Dtos;
-
-namespace WMS.Dtos
+﻿namespace WMS.Dtos
 {
     public class CustomerDto : EntityGuidDto
     {

@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using WMS.Models.Models;
+using WMS.Models;
 
 namespace WMS.Contracts.ILog
 {

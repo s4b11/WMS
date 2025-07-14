@@ -1,7 +1,6 @@
-﻿using WMS.Contracts;
-using WMS.Models.Models.CompanyModel;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.ICompany
+namespace WMS.Contracts
 {
     public interface ICompanyRepository : IRepositoryBase<Company>
     {

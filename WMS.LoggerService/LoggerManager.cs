@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using WMS.Contracts.ILog;
-using WMS.Contracts.ILogger;
-using WMS.Models.Models;
+using WMS.Contracts;
+using WMS.Models;
 
 namespace WMS.LoggerService
 {

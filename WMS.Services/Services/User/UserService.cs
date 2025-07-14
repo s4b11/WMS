@@ -4,15 +4,12 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WMS.Contracts;
-using WMS.Contracts.ILogger;
-using WMS.Contracts.IRepository;
 using WMS.Dtos.Dtos;
 using WMS.LoggerService;
-using WMS.Models.Models;
+using WMS.Models;
 using WMS.Services.IServices;
-using WMS.Services.Results;
 
-namespace WMS.Services.Services
+namespace WMS.Services
 {
     public class UserService : IUserService
     {

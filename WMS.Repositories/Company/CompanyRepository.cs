@@ -1,12 +1,12 @@
-﻿using WMS.Contracts.ICompany;
+﻿using WMS.Contracts;
 using WMS.DataLayer;
-using WMS.Models.Models.CompanyModel;
+using WMS.Models;
 
 namespace WMS.Repositories
 {
     public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
     {
-        public CompanyRepository(WMSDbContext repositoryContext) : base(repositoryContext)
+        public CompanyRepository(WMSContext repositoryContext) : base(repositoryContext)
         {
         }
     }

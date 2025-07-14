@@ -1,6 +1,4 @@
-﻿using WMS.Core.Models;
-
-namespace WMS.Models.Models.UomModel
+﻿namespace WMS.Models
 {
     public class Uom : EntityGuid
     {

@@ -1,6 +1,4 @@
-﻿using WMS.Core.Models;
-
-namespace WMS.Models.Models.CompanyModel
+﻿namespace WMS.Models
 {
     public class Company : EntityGuid
     {

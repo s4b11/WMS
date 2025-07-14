@@ -1,7 +1,4 @@
-﻿using WMS.Core.Models;
-using System;
-
-namespace WMS.Models.Models.CustomerModel
+﻿namespace WMS.Models
 {
     public class Customer : EntityGuid
     {

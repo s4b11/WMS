@@ -1,7 +1,6 @@
-﻿using WMS.Contracts;
-using WMS.Models.Models.VendorModel;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.IVendor
+namespace WMS.Contracts
 {
     public interface IVendorRepository : IRepositoryBase<Vendor>
     {

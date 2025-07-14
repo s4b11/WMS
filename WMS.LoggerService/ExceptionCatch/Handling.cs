@@ -1,7 +1,4 @@
-﻿using System;
-using WMS.LoggerService;
-
-namespace WMS.LoggerService
+﻿namespace WMS.LoggerService
 {
     public static class Handling
     {

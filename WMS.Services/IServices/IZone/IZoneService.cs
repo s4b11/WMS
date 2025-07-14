@@ -1,5 +1,4 @@
 ﻿using WMS.Dtos;
-using WMS.Services.IServices;
 
 namespace WMS.Services.IServices
 {

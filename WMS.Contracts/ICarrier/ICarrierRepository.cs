@@ -1,7 +1,6 @@
-﻿using WMS.Contracts;
-using WMS.Models.Models.CarrierModel;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.ICarrier
+namespace WMS.Contracts
 {
     public interface ICarrierRepository : IRepositoryBase<Carrier>
     {

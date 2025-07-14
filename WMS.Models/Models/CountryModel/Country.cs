@@ -1,6 +1,4 @@
-﻿using WMS.Core.Models;
-
-namespace WMS.Models.Models.CountryModel
+﻿namespace WMS.Models
 {
     public class Country : EntityGuid
     {

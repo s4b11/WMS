@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace WMS.Contracts.ILogger
+namespace WMS.Contracts
 {
     public interface ILoggerManager
     {

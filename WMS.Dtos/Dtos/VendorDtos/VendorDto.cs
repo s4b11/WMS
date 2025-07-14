@@ -1,6 +1,4 @@
-﻿using WMS.Dtos;
-
-namespace WMS.Dtos
+﻿namespace WMS.Dtos
 {
     public class VendorDto : EntityGuidDto
     {

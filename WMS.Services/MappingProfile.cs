@@ -1,15 +1,6 @@
 ﻿using AutoMapper;
 using WMS.Dtos;
 using WMS.Models;
-using WMS.Models.Models.CarrierModel;
-using WMS.Models.Models.CompanyModel;
-using WMS.Models.Models.CountryModel;
-using WMS.Models.Models.CurrencyModel;
-using WMS.Models.Models.CustomerModel;
-using WMS.Models.Models.UomModel;
-using WMS.Models.Models.VendorModel;
-using WMS.Models.Models.ZoneModel;
-using WMS.Utilities;
 
 namespace WMS.Services
 {

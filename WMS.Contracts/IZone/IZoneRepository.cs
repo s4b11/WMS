@@ -1,7 +1,6 @@
-﻿using WMS.Contracts;
-using WMS.Models.Models.ZoneModel;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.IZone
+namespace WMS.Contracts
 {
     public interface IZoneRepository : IRepositoryBase<Zone>
     {

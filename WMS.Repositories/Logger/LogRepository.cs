@@ -3,15 +3,15 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WMS.Contracts.ILog;
 using WMS.DataLayer;
-using WMS.Models.Models;
+using WMS.Models;
 
 namespace WMS.Repositories.Log
 {
     public class LogRepository : ILogRepository
     {
-        private readonly WMSDbContext _context;
+        private readonly WMSContext _context;
 
-        public LogRepository(WMSDbContext context)
+        public LogRepository(WMSContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }

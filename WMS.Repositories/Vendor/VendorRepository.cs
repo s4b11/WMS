@@ -1,12 +1,12 @@
-﻿using WMS.Contracts.IVendor;
+﻿using WMS.Contracts;
 using WMS.DataLayer;
-using WMS.Models.Models.VendorModel;
+using WMS.Models;
 
 namespace WMS.Repositories
 {
     public class VendorRepository : RepositoryBase<Vendor>, IVendorRepository
     {
-        public VendorRepository(WMSDbContext repositoryContext) : base(repositoryContext)
+        public VendorRepository(WMSContext repositoryContext) : base(repositoryContext)
         {
         }
     }

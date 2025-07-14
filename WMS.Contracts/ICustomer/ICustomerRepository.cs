@@ -1,7 +1,6 @@
-﻿using WMS.Contracts;
-using WMS.Models.Models.CustomerModel;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.ICustomer
+namespace WMS.Contracts
 {
     public interface ICustomerRepository : IRepositoryBase<Customer>
     {

@@ -1,6 +1,4 @@
-﻿using WMS.Core.Models;
-
-namespace WMS.Models.Models
+﻿namespace WMS.Models
 {
     public class User : EntityGuid
     {

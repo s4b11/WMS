@@ -1,6 +1,4 @@
-﻿using WMS.Core.Models;
-
-namespace WMS.Models.Models.ZoneModel
+﻿namespace WMS.Models
 {
     public class Zone : EntityGuid
     {

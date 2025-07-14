@@ -1,12 +1,12 @@
-﻿using WMS.Contracts.ICountry;
-using WMS.Models.Models.CountryModel;
+﻿using WMS.Contracts;
+using WMS.Models;
 using WMS.DataLayer;
 
 namespace WMS.Repositories
 {
     public class CountryRepository : RepositoryBase<Country>, ICountryRepository
     {
-        public CountryRepository(WMSDbContext repositoryContext) : base(repositoryContext)
+        public CountryRepository(WMSContext repositoryContext) : base(repositoryContext)
         {
         }
     }

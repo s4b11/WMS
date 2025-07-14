@@ -1,13 +1,4 @@
-﻿using WMS.Contracts.ICarrier;
-using WMS.Contracts.ICompany;
-using WMS.Contracts.ICountry;
-using WMS.Contracts.ICurrency;
-using WMS.Contracts.ICustomer;
-using WMS.Contracts.IUom;
-using WMS.Contracts.IVendor;
-using WMS.Contracts.IZone;
-
-namespace WMS.Contracts
+﻿namespace WMS.Contracts
 {
     public interface IRepositoryWrapper
     {

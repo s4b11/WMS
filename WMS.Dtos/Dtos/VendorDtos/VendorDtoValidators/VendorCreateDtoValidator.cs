@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
-using WMS.Dtos;
 
-namespace WMS.Dtos.Validators
+namespace WMS.Dtos
 {
     public class VendorCreateDtoValidator : AbstractValidator<VendorCreateDto>
     {

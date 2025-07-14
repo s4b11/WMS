@@ -1,7 +1,6 @@
-﻿using WMS.Models.Models;
-using WMS.Contracts.IRepository;
+﻿using WMS.Models;
 
-namespace WMS.Contracts.IRepository
+namespace WMS.Contracts
 {
     public interface IUserRepository : IRepositoryBase<User>
     {

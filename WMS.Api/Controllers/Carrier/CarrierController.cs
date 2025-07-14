@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WMS.Api.Controllers;
 using WMS.Api.Extensions;
 using WMS.Dtos;
 using WMS.Services.IServices;

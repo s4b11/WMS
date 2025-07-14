@@ -3,9 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net;
 using System.Threading.Tasks;
-using WMS.Contracts.ILogger;
+using WMS.Contracts;
 
-namespace WMS.LoggerService.ExceptionCatch
+namespace WMS.LoggerService
 {
     public class CustomExceptionMiddleware
     {
