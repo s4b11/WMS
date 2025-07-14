@@ -56,6 +56,8 @@ builder.Services.AddDbContext<WMSContext>(
     ServiceLifetime.Transient
 );
 
+builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
@@ -70,64 +72,60 @@ builder.Services.AddMvc(opt =>
 // Country
 builder.Services.AddTransient<IValidator<CountryEditDto>, CountryEditDtoValidator>();
 builder.Services.AddTransient<IValidator<CountryCreateDto>, CountryCreateDtoValidator>();
-builder.Services.AddScoped<IRepositoryBase<Country>, CountryRepository>();
+//builder.Services.AddScoped<IRepositoryBase<Country>, CountryRepository>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 
 // Company
 builder.Services.AddTransient<IValidator<CompanyEditDto>, CompanyEditDtoValidator>();
 builder.Services.AddTransient<IValidator<CompanyCreateDto>, CompanyCreateDtoValidator>();
-builder.Services.AddScoped<IRepositoryBase<Company>, CompanyRepository>();
+//builder.Services.AddScoped<IRepositoryBase<Company>, CompanyRepository>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 
 // Vendor
 builder.Services.AddTransient<IValidator<VendorEditDto>, VendorEditDtoValidator>();
 builder.Services.AddTransient<IValidator<VendorCreateDto>, VendorCreateDtoValidator>();
-builder.Services.AddScoped<IRepositoryBase<Vendor>, VendorRepository>();
+//builder.Services.AddScoped<IRepositoryBase<Vendor>, VendorRepository>();
 builder.Services.AddScoped<IVendorRepository, VendorRepository>();
 builder.Services.AddScoped<IVendorService, VendorService>();
 
 // Customer
 builder.Services.AddTransient<IValidator<CustomerEditDto>, CustomerEditDtoValidator>();
 builder.Services.AddTransient<IValidator<CustomerCreateDto>, CustomerCreateDtoValidator>();
-builder.Services.AddScoped<IRepositoryBase<Customer>, CustomerRepository>();
+//builder.Services.AddScoped<IRepositoryBase<Customer>, CustomerRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 // Carrier
 builder.Services.AddTransient<IValidator<CarrierEditDto>, CarrierEditDtoValidator>();
 builder.Services.AddTransient<IValidator<CarrierCreateDto>, CarrierCreateDtoValidator>();
-builder.Services.AddScoped<IRepositoryBase<Carrier>, CarrierRepository>();
+//builder.Services.AddScoped<IRepositoryBase<Carrier>, CarrierRepository>();
 builder.Services.AddScoped<ICarrierRepository, CarrierRepository>();
 builder.Services.AddScoped<ICarrierService, CarrierService>();
 
 // Currency
 builder.Services.AddTransient<IValidator<CurrencyEditDto>, CurrencyEditDtoValidator>();
 builder.Services.AddTransient<IValidator<CurrencyCreateDto>, CurrencyCreateDtoValidator>();
-builder.Services.AddScoped<IRepositoryBase<Currency>, CurrencyRepository>();
+//builder.Services.AddScoped<IRepositoryBase<Currency>, CurrencyRepository>();
 builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
 builder.Services.AddScoped<ICurrencyService, CurrencyService>();
 
 // Uom
 builder.Services.AddTransient<IValidator<UomEditDto>, UomEditDtoValidator>();
 builder.Services.AddTransient<IValidator<UomCreateDto>, UomCreateDtoValidator>();
-builder.Services.AddScoped<IRepositoryBase<Uom>, UomRepository>();
+//builder.Services.AddScoped<IRepositoryBase<Uom>, UomRepository>();
 builder.Services.AddScoped<IUomRepository, UomRepository>();
 builder.Services.AddScoped<IUomService, UomService>();
 
 // Zone
 builder.Services.AddTransient<IValidator<ZoneEditDto>, ZoneEditDtoValidator>();
 builder.Services.AddTransient<IValidator<ZoneCreateDto>, ZoneCreateDtoValidator>();
-builder.Services.AddScoped<IRepositoryBase<Zone>, ZoneRepository>();
+//builder.Services.AddScoped<IRepositoryBase<Zone>, ZoneRepository>();
 builder.Services.AddScoped<IZoneRepository, ZoneRepository>();
 builder.Services.AddScoped<IZoneService, ZoneService>();
 
 
-// Add services to the container.
-//builder.Services.AddControllers();
-//builder.Services.AddDbContext<WMSContext>(options =>
-//    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ILoggerManager, LoggerManager>();
 builder.Services.AddScoped<ILogRepository, LogRepository>();
 

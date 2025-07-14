@@ -99,10 +99,9 @@
         public required string Name { get; set; }
         public required string Code { get; set; }
         public required string City { get; set; }
-        public required string ContactPerson { get; set; }
-        public required string Phone { get; set; }
-        public required string EmailID { get; set; }
-        public required string ImagePath { get; set; }
+        public required string StateId { get; set; }
+        public required string Pin { get; set; }
+        public required string CountryId { get; set; }
 
     }
 }
