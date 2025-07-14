@@ -1,0 +1,86 @@
+﻿using FluentValidation;
+using WMS.Dtos;
+
+namespace WMS.Dtos.Validators
+{
+    public class CustomerEditDtoValidator : AbstractValidator<CustomerEditDto>
+    {
+        public CustomerEditDtoValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .Length(1, 100).WithMessage("{PropertyName} must be between 1 and 100 characters");
+
+            RuleFor(x => x.Code)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .Length(1, 50).WithMessage("{PropertyName} must be between 1 and 50 characters");
+
+            RuleFor(x => x.Addr1)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .Length(1, 100).WithMessage("{PropertyName} must be between 1 and 100 characters");
+
+            RuleFor(x => x.City)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .Length(1, 100).WithMessage("{PropertyName} must be between 1 and 100 characters");
+
+            RuleFor(x => x.CountryId)
+                .NotEmpty().WithMessage("{PropertyName} is empty");
+
+            RuleFor(x => x.StateId)
+                .NotEmpty().WithMessage("{PropertyName} is empty");
+
+            RuleFor(x => x.Pin)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .Length(1, 50).WithMessage("{PropertyName} must be between 1 and 50 characters");
+
+            RuleFor(x => x.EmailID)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .EmailAddress().WithMessage("{PropertyName} must be a valid email")
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters");
+
+            RuleFor(x => x.Phone)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters");
+
+            RuleFor(x => x.ContactPerson)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters");
+
+            RuleFor(x => x.CPEmailID)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .EmailAddress().WithMessage("{PropertyName} must be a valid email")
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters");
+
+            RuleFor(x => x.CPMobile)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters");
+
+            RuleFor(x => x.URL)
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters")
+                .When(x => !string.IsNullOrWhiteSpace(x.URL));
+
+            RuleFor(x => x.ECCNO)
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters");
+
+            RuleFor(x => x.TINNO)
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters");
+
+            RuleFor(x => x.CSTNO)
+                .MaximumLength(100).WithMessage("{PropertyName} must not exceed 100 characters");
+
+            RuleFor(x => x.BaseCurr)
+                .NotNull().WithMessage("{PropertyName} is empty");
+
+            RuleFor(x => x.UserID)
+                .NotEmpty().WithMessage("{PropertyName} is empty");
+
+            RuleFor(x => x.CompanyId)
+                .NotEmpty().WithMessage("{PropertyName} is empty");
+
+            RuleFor(x => x.TransExistFlag)
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .Must(flag => flag == 'Y' || flag == 'N')
+                .WithMessage("{PropertyName} must be either 'Y' or 'N'");
+        }
+    }
+}
