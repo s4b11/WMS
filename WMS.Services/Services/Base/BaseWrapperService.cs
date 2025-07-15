@@ -11,14 +11,14 @@ namespace WMS.Services
         private readonly ILoggerManager _logger;
 
         //Initialize repositories from the wrapper in constructor
-        //private readonly ICountryRepository _countryRepository;
-        //private readonly ICompanyRepository _companyRepository;
-        //private readonly IVendorRepository _vendorRepository;
-        //private readonly ICustomerRepository _customerRepository;
-        //private readonly ICarrierRepository _carrierRepository;
-        //private readonly ICurrencyRepository _currencyRepository;
-        //private readonly IUomRepository _uomRepository;
-        //private readonly IZoneRepository _zoneRepository;
+        private readonly ICountryRepository _countryRepository;
+        private readonly ICompanyRepository _companyRepository;
+        private readonly IVendorRepository _vendorRepository;
+        private readonly ICustomerRepository _customerRepository;
+        private readonly ICarrierRepository _carrierRepository;
+        private readonly ICurrencyRepository _currencyRepository;
+        private readonly IUomRepository _uomRepository;
+        private readonly IZoneRepository _zoneRepository;
 
         private ICountryService _countryService;
         private ICompanyService _companyService;
@@ -29,24 +29,11 @@ namespace WMS.Services
         private IUomService _uomService;
         private IZoneService _zoneService;
 
-        public BaseWrapperService(
-            IMapper mapper,
-            IRepositoryWrapper repositoryWrapper,
-            ILoggerManager logger)
+        public BaseWrapperService(IMapper mapper, IRepositoryWrapper repositoryWrapper, ILoggerManager logger)
         {
             _mapper = mapper;
             _repository = repositoryWrapper;
             _logger = logger;
-
-            // Initialize repository fields
-            //_countryRepository = _repository.Country;
-            //_companyRepository = _repository.Company;
-            //_vendorRepository = _repository.Vendor;
-            //_customerRepository = _repository.Customer;
-            //_carrierRepository = _repository.Carrier;
-            //_currencyRepository = _repository.Currency;
-            //_uomRepository = _repository.Uom;
-            //_zoneRepository = _repository.Zone;
         }
 
         //Country
@@ -56,7 +43,7 @@ namespace WMS.Services
             {
                 if (_countryService == null)
                 {
-                    _countryService = new CountryService(_mapper, _repository.Country, _logger);
+                    _countryService = new CountryService(_mapper, _countryRepository, _logger);
                 }
                 return _countryService;
             }
@@ -69,7 +56,7 @@ namespace WMS.Services
             {
                 if (_companyService == null)
                 {
-                    _companyService = new CompanyService(_mapper, _repository.Company, _logger);
+                    _companyService = new CompanyService(_mapper, _companyRepository, _logger);
                 }
                 return _companyService;
             }
@@ -82,7 +69,7 @@ namespace WMS.Services
             {
                 if (_vendorService == null)
                 {
-                    _vendorService = new VendorService(_mapper, _repository.Vendor, _logger);
+                    _vendorService = new VendorService(_mapper, _vendorRepository, _logger);
                 }
                 return _vendorService;
             }
@@ -95,7 +82,7 @@ namespace WMS.Services
             {
                 if (_customerService == null)
                 {
-                    _customerService = new CustomerService(_mapper, _repository.Customer, _logger);
+                    _customerService = new CustomerService(_mapper, _customerRepository, _logger);
                 }
                 return _customerService;
             }
@@ -108,7 +95,7 @@ namespace WMS.Services
             {
                 if (_carrierService == null)
                 {
-                    _carrierService = new CarrierService(_mapper, _repository.Carrier, _logger);
+                    _carrierService = new CarrierService(_mapper, _carrierRepository, _logger);
                 }
                 return _carrierService;
             }
@@ -121,7 +108,7 @@ namespace WMS.Services
             {
                 if (_currencyService == null)
                 {
-                    _currencyService = new CurrencyService(_mapper, _repository.Currency, _logger);
+                    _currencyService = new CurrencyService(_mapper, _currencyRepository, _logger);
                 }
                 return _currencyService;
             }
@@ -134,7 +121,7 @@ namespace WMS.Services
             {
                 if (_uomService == null)
                 {
-                    _uomService = new UomService(_mapper, _repository.Uom, _logger);
+                    _uomService = new UomService(_mapper, _uomRepository, _logger);
                 }
                 return _uomService;
             }
@@ -147,7 +134,7 @@ namespace WMS.Services
             {
                 if (_zoneService == null)
                 {
-                    _zoneService = new ZoneService(_mapper, _repository.Zone, _logger);
+                    _zoneService = new ZoneService(_mapper, _zoneRepository, _logger);
                 }
                 return _zoneService;
             }

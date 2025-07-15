@@ -20,6 +20,13 @@ namespace WMS.Api.Controllers
             _service = service;
         }
 
+        [HttpGet("test-exception")]
+        public async Task<IActionResult> TestException()
+        {
+            // This will throw an exception that should be caught by your middleware
+            throw new Exception("This is a test exception from ZoneController");
+        }
+
         [HttpGet]
         public async Task<ActionResult<ApiResponse<IEnumerable<ZoneCompactDto>>>> Get()
         {

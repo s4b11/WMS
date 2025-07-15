@@ -16,7 +16,6 @@ using WMS.Contracts.ILog;
 using WMS.DataLayer;
 using WMS.Dtos;
 using WMS.LoggerService;
-using WMS.Models;
 using WMS.Repositories;
 using WMS.Repositories.Log;
 using WMS.Services;
@@ -56,18 +55,21 @@ builder.Services.AddDbContext<WMSContext>(
     ServiceLifetime.Transient
 );
 
-builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+//if (!AppDomain.CurrentDomain.FriendlyName.StartsWith("ef", StringComparison.OrdinalIgnoreCase))
+//{
+//    builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+//}
+
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
 });
 
-builder.Services.AddMvc(opt =>
+builder.Services.AddMvc(opt =>  
 {
     opt.Filters.Add(typeof(ValidatorActionFilter));
 }).AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Program>());
-
 
 // Country
 builder.Services.AddTransient<IValidator<CountryEditDto>, CountryEditDtoValidator>();
